@@ -2,7 +2,7 @@
 This code intends to estimate the costs of a negative income tax (NIT) if implemented in the United States. <br></br>
 The data used (the relevent aspects being the household income level at each percentile in 2020) comes from: https://dqydj.com/average-median-top-household-income-percentiles/. Note that the three rightmost columns in the data file are not used by this code. The figure for the number of households in the United States comes from: https://www.census.gov/quickfacts/fact/table/US/HSD410219 <br></br>
 This code should by no means be used as an end all, be all for the costs of a NIT. It is based off of rough estimates, so take with a grain of salt. The code is also easy to break because it doesn't check for valid input (yet). <br></br>
-Also note that these estimations don't account for the fact that the marginal tax rate under the NIT threshold would become zero. I will try to implement this in the near future
+Also note that these estimations don't account for the fact that the marginal tax rate under the NIT threshold would become zero. I will try to implement this in the near future though it will probably be difficult to get a good estimation
 
 <h1>About the Negative Income Tax</h1>
 The NIT is a welfare program which can be used to guarantee income. Unlike a Universal basic income, the payments phase out as income increases, so a greater poverty reduction is achieved with a smaller total cost. Unlike means-tested welfare, recipients do not face a "welfare cliff" in which increasing their earnings can sometimes lower their income <br></br>
