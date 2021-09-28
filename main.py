@@ -20,7 +20,8 @@ def binary_search(income: float, data: list[list[float]]) -> int:
 # returns the percent of households at a given income threshold
 def households_at_threshold(l_index: int, income: float, data: list[list[float]]) -> float:
     return (data[l_index][0] +
-           (income - data[l_index][1]) / (data[l_index+1][1] - data[l_index][1])) / 100
+            (data[l_index + 1][0] - data[l_index][0]) * (income - data[l_index][1]) / (
+                        data[l_index + 1][1] - data[l_index][1])) / 100
 
 
 # calculates the amount a NIT at a certain threshold and percent will cost
