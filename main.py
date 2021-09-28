@@ -2,7 +2,8 @@ NUM_HOUSEHOLDS_US = 120756048
 
 
 # returns index of the "lower" data point the user inputed income is between
-def binary_search(income: float, l: int, r: int, data: list[list[float]]) -> int:
+def binary_search(income: float, data: list[list[float]]) -> int:
+    l, r = 0, len(data) - 1
     res = -1
     while l <= r:
         mid = l + (r - l) // 2
@@ -16,11 +17,6 @@ def binary_search(income: float, l: int, r: int, data: list[list[float]]) -> int
     return res
 
 
-# wrapper for the binary search function
-def bs_wrapper(income: float, data: list[list[float]]) -> int:
-    return binary_search(income, 0, len(data) - 1, data)
-
-
 # returns the percent of households at a given income threshold
 def households_at_threshold(l_index: int, income: float, data: list[list[float]]) -> float:
     return (data[l_index][0] +
@@ -32,7 +28,7 @@ def calculate_cost(threshold: float, percent: float, data: list[list[float]]) ->
     res = 0.0
     prev_percent = 0.0
     for i in range(0, int(threshold), 100):
-        curr = households_at_threshold(bs_wrapper(i, data), float(i), data)
+        curr = households_at_threshold(binary_search(i, data), float(i), data)
         res += (curr - prev_percent) * NUM_HOUSEHOLDS_US * ((threshold - i) * percent)
         prev_percent = curr
 
